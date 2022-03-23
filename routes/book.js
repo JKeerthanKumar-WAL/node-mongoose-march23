@@ -1,0 +1,12 @@
+var express = require("express");
+var router = express.Router();
+const bookController = require("../controllers/book");
+router.get("/", bookController.getBooks);
+router.post("/", bookController.createBook);
+router.delete("/:id", bookController.deleteBookById);
+router.put("/:id", bookController.updateBook);
+router.get("/bookandauthor", bookController.getBookWithAuthor);
+router.get("/bookwithcondition/:name", bookController.getBookWithCondition);
+router.get("/authorandcategory", bookController.getBookWithAuthorAndCategory);
+router.get("/:id", bookController.getBookWithId);
+module.exports = router;
